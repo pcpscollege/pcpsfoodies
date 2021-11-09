@@ -23,11 +23,7 @@ class ExploreScreen extends StatelessWidget {
         // TODO: Add Nested List Views
         if (snapshot.connectionState == ConnectionState.done) {
           final recipes = snapshot.data?.todayRecipes ?? [];
-          return Center(
-            child: Container(
-              child: const Text('Show Today Recipe Listview'),
-            ),
-          );
+          return TodayRecipeListView(recipes: recipes);
         } else {
           return const Center(
             child: CircularProgressIndicator(),
