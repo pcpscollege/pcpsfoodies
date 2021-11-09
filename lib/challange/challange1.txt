@@ -1,0 +1,14 @@
+Add a scroll controller to ExploreScreen. Print two statements to the console:
+1. print('I am at the bottom!') if the user scrolls to the bottom
+2. print('I am at the top') if the user scrolls to the top
+
+You can view the scroll controller API documentation here:
+https://api.flutter.dev/flutter/widgets/ScrollController-class.html
+
+HINTS :
+1. Make ExploreScreen a stateful widget.
+2. Create an instance of ScrollController in the initState().
+3. Create scrollListener() to listen to the scroll position.
+4. Add a scroll listener to the scroll controller.
+5. Add the scroll controller to the ListView.
+6. Dispose your scroll scrollListener().
