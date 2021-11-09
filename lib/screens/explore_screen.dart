@@ -17,13 +17,36 @@ class ExploreScreen extends StatelessWidget {
       child: Text('Explore Screen'),
     );*/
     // FutureBuilder created now
-    return FutureBuilder(
+    /*return FutureBuilder(
       future: mockService.getExploreData(),
       builder: (context, AsyncSnapshot<ExploreData> snapshot) {
         // TODO: Add Nested List Views
         if (snapshot.connectionState == ConnectionState.done) {
           final recipes = snapshot.data?.todayRecipes ?? [];
           return TodayRecipeListView(recipes: recipes);
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
+    );*/
+    return FutureBuilder(
+      future: mockService.getExploreData(),
+      builder: (context, AsyncSnapshot<ExploreData> snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          final recipes = snapshot.data?.todayRecipes ?? [];
+          return ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              TodayRecipeListView(recipes: recipes),
+              const SizedBox(height: 16),
+              Container(
+                height: 400,
+                color: Colors.green,
+              )
+            ],
+          );
         } else {
           return const Center(
             child: CircularProgressIndicator(),
