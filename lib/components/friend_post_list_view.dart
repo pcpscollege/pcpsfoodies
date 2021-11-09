@@ -20,7 +20,7 @@ class FriendPostListView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Social Chefts', style: Theme.of(context).textTheme.headline1),
+          Text('Social Chefs', style: Theme.of(context).textTheme.headline1),
           const SizedBox(height: 16),
           ListView.separated(
             itemBuilder: (context, index) {
