@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'models/models.dart';
 
 import 'pcps_theme.dart';
 import 'home.dart';
@@ -15,7 +17,12 @@ class Pcpsfoodies extends StatelessWidget {
     return MaterialApp(
       theme: theme,
       title: 'PCPS Foodies',
-      home: const Home(),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => TabManager()),
+        ],
+        child: const Home(),
+      ),
     );
   }
 }
