@@ -1,0 +1,7 @@
+1. Add provider: ^6.0.1 to the pubspec.yaml
+2. Create the tab manager file in models directory 
+   - this extends ChangeNotifier. This allows the object to provide change notifications to its listeners
+   - notifyListeners() notifies all widgets listening to this state
+3. add TabManager to models.dart
+
+
