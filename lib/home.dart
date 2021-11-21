@@ -13,8 +13,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipesScreen(),

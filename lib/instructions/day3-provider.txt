@@ -22,4 +22,13 @@ Setup the consumer in home.dart
 Setup Provider.of in empty_grocery_screen.dart file
 
 
+MANAGING THE GROCERY ITEMS
+1. Create grocery_manager.dart in models directory.
+2. Add grocery_manager.dart to models.dart.
+3. Add GroceryManger provider in main.dart.
+4. Consume the GroceryManager in the grocery_screen.dart file. 
+5. Write the buildGroceryScreen Function
+6. Add scaffold and floating action button to the grocery screen page.
+
+
 
