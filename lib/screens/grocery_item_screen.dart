@@ -83,6 +83,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             // Add name textfield
             buildNameField(),
             // Add importance selection
+            buildImportanceField(),
             // Add date picker
             // Add time picker
             // Add color picker
@@ -99,10 +100,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Item Name',
-          style: GoogleFonts.lato(fontSize: 28.0),
-        ),
+        fieldLabel('Item Name'),
         TextField(
           controller: _nameController,
           cursorColor: _currentColor,
@@ -122,9 +120,64 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       ],
     );
   }
+
   // Add buildImportanceField()
+  Widget buildImportanceField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        fieldLabel('Importance'),
+        Wrap(
+          spacing: 10.0,
+          children: [
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'low',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.low,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.low);
+              },
+            ),
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'medium',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.medium,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.medium);
+              },
+            ),
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'high',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.high,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.high);
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
   // Add buildDateField()
   // Add buildTimeField()
   // Add buildColorPicker()
   // Add buildQuantityField()
+
+  // Add FieldLable()
+  Widget fieldLabel(String text) {
+    return Text(
+      text,
+      style: GoogleFonts.lato(fontSize: 28.0),
+    );
+  }
 }
