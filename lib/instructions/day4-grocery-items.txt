@@ -1,0 +1,8 @@
+1. Add following packages to pubspec.yaml
+  flutter_colorpicker: ^1.0.2
+  intl: ^0.17.0
+  uuid: ^3.0.5
+
+2. Add grocery_item_screen.dart to screens folder.
+3. Add grocery_item_screen to grocery_item_screen
+
