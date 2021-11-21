@@ -45,7 +45,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       _importance = originalItem.importance;
       _currentColor = originalItem.color;
       final date = originalItem.date;
-      _timeOfDay = TimeOfDate(hour: date.hour, minute: date.minute);
+      _timeOfDay = TimeOfDay(hour: date.hour, minute: date.minute);
       _dueDate = date;
     }
     // add listener to the text controller
@@ -81,6 +81,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         child: ListView(
           children: [
             // Add name textfield
+            buildNameField(),
             // Add importance selection
             // Add date picker
             // Add time picker
@@ -92,7 +93,35 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       ),
     );
   }
+
   // Add buildNameField()
+  Widget buildNameField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Item Name',
+          style: GoogleFonts.lato(fontSize: 28.0),
+        ),
+        TextField(
+          controller: _nameController,
+          cursorColor: _currentColor,
+          decoration: InputDecoration(
+            hintText: 'Eg. Apples, Banana, 1 kg suger',
+            enabledBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: _currentColor),
+            ),
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(color: _currentColor),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
   // Add buildImportanceField()
   // Add buildDateField()
   // Add buildTimeField()
