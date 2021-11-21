@@ -4,5 +4,8 @@
   uuid: ^3.0.5
 
 2. Add grocery_item_screen.dart to screens folder.
-3. Add grocery_item_screen to grocery_item_screen
+3. Add grocery_item_screen to grocery_item_screen.
+4. Add GroceryItemScreen state properties to grocery_item_screen file.
+5. Add iniState() function to _GroceryItemScreenState class
+6. Add GroceryItemScreen layout widget using Scaffold
 
